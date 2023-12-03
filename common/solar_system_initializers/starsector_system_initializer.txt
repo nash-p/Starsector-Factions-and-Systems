@@ -48,11 +48,9 @@ heg_aztlan_system_initializer = {
 	}
 	planet = {
 		class = "pc_asteroid"
+		name = "The Ciltetl"
 		size = 2
 		orbit_distance = 25
-		init_effect = {
-			set_name = "The Ciltetl"
-		}
 	}
 	planet = {
 		class = "pc_desert"
@@ -64,10 +62,14 @@ heg_aztlan_system_initializer = {
 		init_effect = {
 			set_name = "Chicomoztoc"
 			prevent_anomaly = yes
-			#add_modifier = {
-			#	modifier = "bleak_planet"
-			#	days = -1
-			#}
+			add_modifier = {
+				modifier = "bleak_planet"
+				days = -1
+			}
+			add_modifier = {
+				modifier = "alloy_relic"
+				days = -1
+			}
 		}
 	}
 	planet = {
@@ -101,6 +103,9 @@ heg_aztlan_system_initializer = {
 			init_effect = {
 				set_name = "Coatl"
 				prevent_anomaly = yes
+				add_modifier = {
+					modifier = "irradiated_planet"
+				}
 			}
 		}
 		change_orbit = @base_moon_distance
@@ -122,9 +127,159 @@ heg_aztlan_system_initializer = {
 			max = 2
 		}
 		orbit_distance = 20
-		orbit_angle = {
-			min = 90
-			max = 270
+	}
+	neighbor_system = {
+		hyperlane_jumps = {
+			min = 1
+			max = @jumps
 		}
+		initializer = "aztlan_neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = {
+			num_guaranteed_colonies >= 1
+		}
+		hyperlane_jumps = {
+			min = 1
+			max = @jumps
+		}
+		initializer = "sol_neighbor_t1_first_colony"
+	}
+	neighbor_system = {
+		trigger = {
+			num_guaranteed_colonies = 0
+		}
+		hyperlane_jumps = {
+			min = 1
+			max = @jumps
+		}
+		initializer = "sol_neighbor_t1_no_guaranteed_colony"
+	}
+}
+
+### Naraka Star System
+aztlan_neighbor_t1 = {
+	name = "aztlan_neighbor_t1_NAME"
+	class = sc_k
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+		}
+	}
+	planet = {
+		name = "aztlan_neighbor_t1_NARAKA"
+		count = 1
+		class = pc_k_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 28
+		has_ring = no
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 30
+	}
+	change_orbit = 30
+	planet = {
+		class = "pc_asteroid"
+		size = {
+			min = 1
+			max = 3
+		}
+		orbit_distance = 0
+		count = {
+			min = 1
+			max = 3
+		}
+	}
+	planet = {
+		class = "pc_asteroid"
+		name = "The Yamuna"
+		size = 3
+		orbit_distance = 0
+	}
+	change_orbit = 25
+	planet = {
+		class = "pc_arid"
+		size = 14
+		orbit_distance = 0
+		orbit_angle = 60
+		has_ring = yes
+		init_effect = {
+			set_name = "Yama"
+			prevent_anomaly = yes
+			add_modifier = {
+				modifier = "bleak_planet"
+				days = -1
+			}
+		}
+		change_orbit = @base_moon_distance
+		moon = {
+			class = "pc_barren"
+			size = 7
+			orbit_distance = 0
+			orbit_angle = 60
+			has_ring = no
+			init_effect = {
+				set_name = "Yami"
+				add_modifier = {
+					modifier = "bleak_planet"
+					days = -1
+				}
+			}
+		}
+		change_orbit = @base_moon_distance
+		moon = {
+			class = "pc_barren"
+			orbit_distance = 0
+			orbit_angle = 60
+			size = 10
+			has_ring = no
+			init_effect = {
+				set_name = "Nachiketa"
+				clear_deposits = yes
+				set_deposit = d_energy_6
+			}
+		}
+	}
+	change_orbit = @distance
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 0
+		orbit_angle = 60
+		size = 10
+		has_ring = no
+		init_effect = {
+			set_name = "Chitagupta"
+			clear_deposits = yes
+			set_deposit = d_minerals_3
+		}
+	}
+	planet = {
+		count = {
+			min = 0
+			max = 2
+		}
+		orbit_distance = 20
+	}
+	neighbor_system = {
+		trigger = {
+			num_guaranteed_colonies >= 2
+		}
+		hyperlane_jumps = {
+			min = 1
+			max = @jumps
+		}
+		initializer = "sol_neighbor_t2_second_colony"
+	}
+	neighbor_system = {
+		trigger = {
+			num_guaranteed_colonies < 2
+		}
+		hyperlane_jumps = {
+			min = 1
+			max = @jumps
+		}
+		initializer = "sol_neighbor_t2_no_guaranteed_colony"
 	}
 }

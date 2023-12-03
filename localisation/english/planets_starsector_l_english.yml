@@ -2,5 +2,8 @@
   heg_aztlan_system_initializer_NAME:0 "Aztlan System"
   heg_aztlan_system_initializer_DESC:0 "The Aztlan System, home of The Hegemony"
   heg_aztlan_system_initializer_AZTLAN:0 "Aztlan"
+  aztlan_neighbor_t1_NAME:0 "Naraka System"
+  aztlan_neighbor_t1_NARAKA:0 "Naraka"
+
 
 
