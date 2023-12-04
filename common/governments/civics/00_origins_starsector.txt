@@ -1,0 +1,42 @@
+origin_starsector_hegemony = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_default.dds"
+	picture = GFX_evt_metropolis
+	max_once_global = yes
+	playable = {
+		always = yes
+	}
+	starting_colony = pc_desert
+	habitability_preference = pc_continental
+	possible = {
+		authority = {
+			OR = {
+				value = auth_oligarchic
+				value = auth_dictatorial
+			}
+		}
+		ethics = {
+			OR = {
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+			OR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+	}
+	description = "starsector_origin_tooltip_hegemony_effects"
+	modifier = {
+		country_edict_fund_add = 100
+	}
+	advanced_start = yes
+	preferred_planet_class_neighbor = no
+	initializers = {
+		heg_aztlan_system_initializer
+	}
+	flags = {
+		custom_start_screen
+		is_starsector_hegemony
+	}
+}

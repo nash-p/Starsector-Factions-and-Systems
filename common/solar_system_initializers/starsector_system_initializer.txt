@@ -9,15 +9,6 @@ heg_aztlan_system_initializer = {
 		empire_home_system
 	}
 	usage = custom_empire
-	init_effect = {
-		every_neighbor_system = {
-			set_star_flag = empire_cluster
-			every_neighbor_system = {
-				set_star_flag = empire_cluster
-			}
-		}
-		generate_home_system_resources = yes
-	}
 	planet = {
 		class = "pc_g_star"
 		size = 30
@@ -154,6 +145,21 @@ heg_aztlan_system_initializer = {
 			max = @jumps
 		}
 		initializer = "aztlan_neighbor_t1_no_guaranteed_colony"
+	}
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+		spawn_megastructure = {
+			type = "gateway_ruined"
+			random_pos = yes
+			orbit_distance = 20
+			orbit_angle = 360
+		}
 	}
 }
 
