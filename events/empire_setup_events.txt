@@ -1,0 +1,54 @@
+namespace = starsector_setup
+### Setup event to give Hegemony all their systems ad colonies, only fired by Hegemony origin
+country_event = {
+	id = starsector_setup.1
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		create_country = {
+			name = "starsector dummy country"
+			type = neutral_faction
+			effect = {
+				save_event_target_as = dummy_country_target
+			}
+		}
+		owner.capital_scope.solar_system = {
+			every_system_planet = {
+				limit = {
+					has_planet_flag = starsector_heg_colony
+				}
+				save_event_target_as = planet_target
+				log = "Found a planet named [this.GetName]"
+				event_target:dummy_country_target = {
+					# Create a dummy leader, use his name to store the planets original name
+					# A bit smelly, but works
+					create_saved_leader = {
+						key = "dummy_leader_key"
+						creator = this
+						name = ""
+						species = last_created_species
+						effect = {
+							set_name = {
+								key = "starsector_event_planet_name"
+								variable_string = "[planet_target.GetName]"
+							}
+							set_leader_flag = starsector_dummy_leader
+							save_event_target_as = dummy_leader_target
+						}
+					}
+				}
+				create_colony = {
+					owner = root
+					species = root.species
+				}
+				set_owner = root
+				set_controller = root
+				set_name = {
+					key = "starsector_event_dummy_leader_name"
+					variable_string = "[dummy_leader_target.GetName]"
+				}
+				log = "Changed a planet's name to [this.GetName]"
+			}
+		}
+	}
+}

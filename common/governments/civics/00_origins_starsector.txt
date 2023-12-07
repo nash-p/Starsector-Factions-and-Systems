@@ -37,6 +37,6 @@ origin_starsector_hegemony = {
 	}
 	flags = {
 		custom_start_screen
-		is_starsector_hegemony
+		is_starsector_hegemony_flag
 	}
 }
