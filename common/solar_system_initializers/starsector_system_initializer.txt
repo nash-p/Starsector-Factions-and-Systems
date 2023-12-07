@@ -1,12 +1,13 @@
 @distance = 50
 @base_moon_distance = 10
-@jumps = 3
+@jumps = 4
 ### Aztlan System (Hegemony)
 heg_aztlan_system_initializer = {
 	name = "heg_aztlan_system_initializer_NAME"
 	class = "sc_g"
 	init_effect = {
-		save_global_event_target_as = "starsector_heg_homesystem"
+		save_global_event_target_as = starsector_heg_homesystem
+		set_star_flag = starsector_is_heg_system_flag
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
 			every_neighbor_system = {
@@ -136,6 +137,9 @@ heg_aztlan_system_initializer = {
 		}
 	}
 	neighbor_system = {
+		trigger = {
+			num_guaranteed_colonies >= 1
+		}
 		hyperlane_jumps = {
 			min = 1
 			max = @jumps
@@ -169,7 +173,8 @@ aztlan_neighbor_t1 = {
 	name = "aztlan_neighbor_t1_NAME"
 	class = sc_k
 	init_effect = {
-		save_global_event_target_as = "starsector_heg_naraka"
+		save_global_event_target_as = starsector_heg_naraka
+		set_star_flag = starsector_is_heg_system_flag
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
 		}
@@ -299,7 +304,8 @@ aztlan_neighbor_t1_first_colony = {
 	name = "Samarra"
 	class = sc_k
 	init_effect = {
-		save_global_event_target_as = "starsector_heg_samarra"
+		save_global_event_target_as = starsector_heg_samarra
+		set_star_flag = starsector_is_heg_system_flag
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
 		}
@@ -459,7 +465,8 @@ aztlan_neighbor_t1_no_guaranteed_colony = {
 	name = "Tia"
 	class = sc_k
 	init_effect = {
-		save_global_event_target_as = "starsector_heg_tia"
+		save_global_event_target_as = starsector_heg_tia
+		set_star_flag = starsector_is_heg_system_flag
 		every_neighbor_system = {
 			set_star_flag = empire_cluster
 		}
