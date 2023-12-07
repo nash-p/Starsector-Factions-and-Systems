@@ -5,50 +5,27 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
+		log = "STARSECTOR_LOG: starting event starsector_setup.1"
 		create_country = {
 			name = "starsector dummy country"
 			type = neutral_faction
 			effect = {
-				save_event_target_as = dummy_country_target
+				save_global_event_target_as = dummy_country_target
 			}
 		}
 		owner.capital_scope.solar_system = {
+			log = "STARSECTOR_LOG: calling a scritped effect 'starsector_create_colony_effect'"
 			every_system_planet = {
 				limit = {
 					has_planet_flag = starsector_heg_colony
 				}
-				save_event_target_as = planet_target
-				log = "Found a planet named [this.GetName]"
-				event_target:dummy_country_target = {
-					# Create a dummy leader, use his name to store the planets original name
-					# A bit smelly, but works
-					create_saved_leader = {
-						key = "dummy_leader_key"
-						creator = this
-						name = ""
-						species = last_created_species
-						effect = {
-							set_name = {
-								key = "starsector_event_planet_name"
-								variable_string = "[planet_target.GetName]"
-							}
-							set_leader_flag = starsector_dummy_leader
-							save_event_target_as = dummy_leader_target
-						}
-					}
-				}
-				create_colony = {
-					owner = root
-					species = root.species
-				}
-				set_owner = root
-				set_controller = root
-				set_name = {
-					key = "starsector_event_dummy_leader_name"
-					variable_string = "[dummy_leader_target.GetName]"
-				}
-				log = "Changed a planet's name to [this.GetName]"
+				save_global_event_target_as = planet_target
+				log = "STARSECTOR_LOG: starsector_setup.1 found a planet to colonize named [This.GetName]"
+				starsector_create_colony_effect = yes
+				clear_global_event_target = planet_target
 			}
 		}
+		clear_global_event_target = dummy_country_target
+		log = "STARSECTOR_LOG: starsector_setup.1 has finished"
 	}
 }

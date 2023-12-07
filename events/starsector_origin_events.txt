@@ -13,12 +13,7 @@ country_event = {
 			message = no
 		}
 		country_event = {
-<<<<<<< HEAD
 			id = starsector_setup.1
-=======
-			###id = starsector_setup.1
-			id = starsector_setup.2
->>>>>>> 0660ae917985a00df5cb836af5c7b4e413d8ed09
 		}
 	}
 }
