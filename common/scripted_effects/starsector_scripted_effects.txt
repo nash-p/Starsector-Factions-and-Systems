@@ -1,11 +1,22 @@
 #Adds outpost to country with hegemony origin, called by starsector_setup.1 event only
-starsector_hegemony_give_outposts_effect = {
-	log = "COUNTRY [root.GetName]: Adding outposts."
-	#Find the system
+starsector_create_outpost_effect = {
+	# Being called from within scope system
+	log = "!!!STARSECTOR_LOG starsector_create_outpost_effect is adding an outpost in SYSTEM:\\[this.GetName]"
+	create_starbase = {
+		owner = root.owner
+		size = starbase_outpost
+	}
+	# I was trying to add the created system/starbase to a sector but gave up
+	#root.owner = {
+	# this really should be ordered_owned_sector but I can't get the syntax right :P
+	# Besides there should only be one sector at game start
+	#random_owned_sector = {
+	#}
+	#}
 }
 
 starsector_create_colony_effect = {
-	# Being called from within scope system
+	# Being called from within scope planet
 	log = "STARSECTOR_LOG: starsector_create_colony_effect found a planet to colonize named \\[this.GetName]"
 	event_target:dummy_country_target = {
 		# Create a dummy leader, use his name to store the planets original name
@@ -34,5 +45,24 @@ starsector_create_colony_effect = {
 		key = "starsector_event_dummy_leader_name"
 		variable_string = "\\[dummy_leader_target.GetName]"
 	}
-	log = "STARSECTOR_LOG: starsector_create_colony_effect successfully renamed a planet to \\[this.GetName]"
+	#clean up
+	event_target:dummy_leader_target = {
+		kill_leader = {
+			show_notification = no
+		}
+	}
+	log = "STARSECTOR_LOG: starsector_create_colony_effect successfully created COLONY:\\[this.GetName] in SYSTEM:\\[prev.GetName]"
+}
+
+starsector_find_colony_planet_effect = {
+	# Being called from within scope system
+	every_system_planet = {
+		limit = {
+			has_planet_flag = $COLONY_FLAG$
+		}
+		save_global_event_target_as = planet_target
+		log = "STARSECTOR_LOG: starsector_find_colony_planet_effect found a planet to colonize named \\[This.GetName]"
+		#starsector_create_colony_effect = yes
+		clear_global_event_target = planet_target
+	}
 }

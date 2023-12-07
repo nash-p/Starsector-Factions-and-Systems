@@ -33,6 +33,7 @@ country_event = {
 				limit = {
 					has_star_flag = starsector_is_heg_system_flag
 				}
+				starsector_create_outpost_effect = yes
 				every_system_planet = {
 					limit = {
 						has_planet_flag = starsector_heg_colony
