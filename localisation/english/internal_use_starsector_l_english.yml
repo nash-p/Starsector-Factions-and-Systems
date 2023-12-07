@@ -1,0 +1,8 @@
+﻿l_english:
+  starsector_event_planet_name:0 "[planet_target.GetName]"
+  starsector_event_dummy_leader_name:0 "[dummy_leader_target.GetName]"
+  starsector_event_this_name:0 "[this.GetName]"
+
+
+
+
