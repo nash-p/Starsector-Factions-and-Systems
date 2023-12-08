@@ -18,15 +18,9 @@ country_event = {
 		# Thankfully, there are only 4 systems I need to run this event code in
 		# Start in the Hegemony capital system
 		owner.capital_scope.solar_system = {
-			log = "STARSECTOR_LOG: calling a scritped effect 'starsector_create_colony_effect'"
-			every_system_planet = {
-				limit = {
-					has_planet_flag = starsector_heg_colony
-				}
-				save_global_event_target_as = planet_target
-				log = "STARSECTOR_LOG: starsector_setup.1 found a planet to colonize named [This.GetName] in SYSTEM:[Prev.GetName]"
-				starsector_create_colony_effect = yes
-				clear_global_event_target = planet_target
+			log = "STARSECTOR_LOG: calling a scritped effect 'starsector_colonize_system_effect' in SYSTEM:[this.GetName]"
+			starsector_colonize_system_effect = {
+				COLONY_FLAG = starsector_heg_colony
 			}
 			# The systems are supposed to be neighbors, scoping from here should be fine
 			every_neighbor_system = {
@@ -34,14 +28,8 @@ country_event = {
 					has_star_flag = starsector_is_heg_system_flag
 				}
 				starsector_create_outpost_effect = yes
-				every_system_planet = {
-					limit = {
-						has_planet_flag = starsector_heg_colony
-					}
-					save_global_event_target_as = planet_target
-					log = "STARSECTOR_LOG: starsector_setup.1 found a planet to colonize named [This.GetName] in SYSTEM:[Prev.GetName]"
-					starsector_create_colony_effect = yes
-					clear_global_event_target = planet_target
+				starsector_colonize_system_effect = {
+					COLONY_FLAG = starsector_heg_colony
 				}
 			}
 		}

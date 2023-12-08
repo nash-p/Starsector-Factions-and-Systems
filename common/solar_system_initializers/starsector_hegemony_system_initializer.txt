@@ -1,6 +1,6 @@
 @distance = 50
 @base_moon_distance = 10
-@jumps = 4
+@jumps = 1
 ### Aztlan System (Hegemony)
 heg_aztlan_system_initializer = {
 	name = "heg_aztlan_system_initializer_NAME"
@@ -253,7 +253,7 @@ aztlan_neighbor_t1 = {
 				set_name = "Nachiketa"
 				clear_deposits = yes
 				set_deposit = d_energy_6
-				set_planet_flag = starsector_heg_colony
+				#set_planet_flag = starsector_heg_colony
 			}
 		}
 	}
