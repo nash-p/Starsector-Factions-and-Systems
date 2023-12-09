@@ -74,9 +74,14 @@ heg_aztlan_system_initializer = {
 				days = -1
 			}
 			add_modifier = {
+				modifier = "irradiated_planet"
+				days = -1
+			}
+			add_modifier = {
 				modifier = "alloy_relic"
 				days = -1
 			}
+			save_global_event_target_as = heg_Chicomoztoc_target
 		}
 	}
 	change_orbit = 35
@@ -114,6 +119,7 @@ heg_aztlan_system_initializer = {
 					modifier = "irradiated_planet"
 				}
 				set_planet_flag = starsector_heg_colony
+				save_global_event_target_as = heg_Coatl_target
 			}
 		}
 		change_orbit = @base_moon_distance
@@ -199,11 +205,11 @@ aztlan_neighbor_t1 = {
 			min = 1
 			max = 3
 		}
-		orbit_distance = 0
 		count = {
 			min = 1
 			max = 3
 		}
+		orbit_distance = 0
 	}
 	planet = {
 		class = "pc_asteroid"
@@ -226,6 +232,7 @@ aztlan_neighbor_t1 = {
 				days = -1
 			}
 			set_planet_flag = starsector_heg_colony
+			save_global_event_target_as = heg_Yama_target
 		}
 		change_orbit = @base_moon_distance
 		moon = {
@@ -321,16 +328,16 @@ aztlan_neighbor_t1_first_colony = {
 	}
 	asteroid_belt = {
 		type = rocky_asteroid_belt
-		radius = @distance
+		radius = 50
 	}
-	change_orbit = @distance
+	change_orbit = 50
 	planet = {
-		name = "Tigra"
-		count = {
+		class = "pc_asteroid"
+		size = {
 			min = 1
 			max = 3
 		}
-		size = {
+		count = {
 			min = 1
 			max = 3
 		}
@@ -338,6 +345,13 @@ aztlan_neighbor_t1_first_colony = {
 			min = -90
 			max = 90
 		}
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_asteroid"
+		name = "Tigra"
+		size = 3
+		orbit_distance = 0
 	}
 	planet = {
 		class = "pc_barren"
@@ -362,6 +376,7 @@ aztlan_neighbor_t1_first_colony = {
 			init_effect = {
 				set_name = "Tigra City"
 				set_planet_flag = starsector_heg_colony
+				save_global_event_target_as = heg_TigraCity_target
 			}
 		}
 	}
@@ -380,6 +395,7 @@ aztlan_neighbor_t1_first_colony = {
 				days = -1
 			}
 			set_planet_flag = starsector_heg_colony
+			save_global_event_target_as = heg_Eventide_target
 		}
 		change_orbit = @base_moon_distance
 		moon = {
@@ -431,7 +447,8 @@ aztlan_neighbor_t1_first_colony = {
 		}
 		change_orbit = @base_moon_distance
 		moon = {
-			class = "pc_arctic"
+			#class = "pc_tundra"
+			class = "pc_frozen"
 			size = 10
 			orbit_distance = 0
 			orbit_angle = 0
@@ -440,7 +457,8 @@ aztlan_neighbor_t1_first_colony = {
 				set_name = "Orthus"
 				prevent_anomaly = yes
 				set_deposit = d_exotic_gases_2
-				set_planet_flag = starsector_heg_colony
+				#set_planet_flag = starsector_heg_colony
+				#save_global_event_target_as = heg_Orthus_target
 			}
 		}
 		change_orbit = @base_moon_distance
@@ -455,6 +473,7 @@ aztlan_neighbor_t1_first_colony = {
 				prevent_anomaly = yes
 				set_deposit = d_energy_5
 				set_planet_flag = starsector_heg_colony
+				save_global_event_target_as = heg_Sphinx_target
 			}
 		}
 	}

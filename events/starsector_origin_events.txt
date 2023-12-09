@@ -13,7 +13,7 @@ country_event = {
 			message = no
 		}
 		country_event = {
-			id = starsector_setup.1
+			id = starsector_setup_hegemony.1
 		}
 	}
 }

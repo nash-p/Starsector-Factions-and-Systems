@@ -1,0 +1,230 @@
+namespace = starsector_setup_hegemony
+### Setup event to give Hegemony all their systems ad colonies, only fired by Hegemony origin
+### Event_targets for the systems are (global): starsector_heg_homesystem; starsector_heg_naraka; starsector_heg_samarra; starsector_heg_tia
+country_event = {
+	id = starsector_setup_hegemony.1
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		log = "STARSECTOR_LOG: starting event starsector_setup_hegemony.1"
+		# Dummy country needed to create dummy leaders to be used in renaming
+		create_country = {
+			name = "starsector dummy country"
+			type = neutral_faction
+			effect = {
+				save_global_event_target_as = dummy_country_target
+			}
+		}
+		# Thankfully, there are only 4 systems I need to run this event code in
+		# Start in the Hegemony capital system
+		owner.capital_scope.solar_system = {
+			log = "STARSECTOR_LOG: calling a scritped effect 'starsector_colonize_system_effect' in SYSTEM:[this.GetName]"
+			starsector_colonize_system_effect = {
+				COLONY_FLAG = starsector_heg_colony
+			}
+			# The systems are supposed to be neighbors, scoping from here should be fine
+			every_neighbor_system = {
+				limit = {
+					has_star_flag = starsector_is_heg_system_flag
+				}
+				starsector_create_outpost_effect = yes
+				starsector_colonize_system_effect = {
+					COLONY_FLAG = starsector_heg_colony
+				}
+			}
+		}
+		clear_global_event_target = dummy_country_target
+		# Setup buildings and pops for various colonies
+		country_event = {
+			id = starsector_setup_hegemony.2
+		}
+		country_event = {
+			id = starsector_setup_hegemony.3
+		}
+		country_event = {
+			id = starsector_setup_hegemony.4
+		}
+		country_event = {
+			id = starsector_setup_hegemony.5
+		}
+		country_event = {
+			id = starsector_setup_hegemony.6
+		}
+		country_event = {
+			id = starsector_setup_hegemony.7
+		}
+		set_country_flag = starsector_colonization_complete
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.1 has finished"
+	}
+}
+
+### Populate the various colonies with buildings and ... pops
+### Should be called from starsector_setup_hegemony.1 above
+country_event = {
+	# Event for first colony, the capital, Chicomoztoc
+	id = starsector_setup_hegemony.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		capital_scope = {
+			# Starts with 28 pops, building_capital, building_bureaucratic_1, building_research_lab_1, building_commercial_zone 
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_city
+			add_building = building_major_capital
+			add_building = building_bureaucratic_1
+			# I initially added two T1 foundries because it would be cruel to make players pay motes upkeep at the very start of the game
+			# Eventually, I decided to give them a lump sum at the start and let them figure out how to get the rest
+			add_building = building_foundry_2
+			add_building = building_factory_1
+			add_building = building_military_academy
+			add_building = building_stronghold
+			@sacrificed_pops = 11
+			while = {
+				count = @sacrificed_pops
+				random_owned_pop = {
+					# Kill off some pops, preferrably specialist/ruling class to prevent downtime from shifting strata
+					# Chicomoztoc is not as populated as Earth
+					limit = {
+						OR = {
+							has_job_category = specialist
+							has_job_category = ruler
+						}
+						#has_planet_flag = heg_colony@prev
+					}
+					kill_pop = yes
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.2 has finished setting up [capital_scope.GetName]"
+	}
+}
+
+country_event = {
+	# Setup Coatl, small military base
+	id = starsector_setup_hegemony.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:heg_Coatl_target = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_building = building_colony_shelter
+			add_building = building_stronghold
+			add_building = building_planetary_shield_generator
+			while = {
+				count = 4
+				create_pop = {
+					species = owner_main_species
+					ethos = {
+						ethic = ethic_militarist
+					}
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.3 has finished setting up [heg_Coatl_target.GetName]"
+	}
+}
+
+country_event = {
+	# Setup Yama, small industrial colony
+	id = starsector_setup_hegemony.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:heg_Yama_target = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_city
+			add_building = building_capital
+			add_building = building_stronghold
+			add_building = building_factory_1
+			add_building = building_foundry_1
+			add_building = building_hydroponics_farm
+			while = {
+				count = 5
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.3 has finished setting up [heg_Yama_target.GetName]"
+	}
+}
+
+country_event = {
+	# Setup Tigra City, small orbital habitat
+	id = starsector_setup_hegemony.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:heg_TigraCity_target = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_hab_housing
+			add_building = building_colony_shelter
+			add_building = building_energy_grid
+			while = {
+				count = 3
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.5 has finished setting up [heg_TigraCity_target.GetName]"
+	}
+}
+
+country_event = {
+	# Setup Eventide, 2nd largest Hegemony world
+	id = starsector_setup_hegemony.6
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:heg_Eventide_target = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_city
+			add_district = district_city
+			add_building = building_capital
+			add_building = building_stronghold
+			add_building = building_hydroponics_farm
+			add_building = building_mineral_purification_plant
+			add_building = building_factory_1
+			while = {
+				count = 13
+				create_pop = {
+					species = owner_main_species
+					ethos = {
+						ethic = ethic_militarist
+					}
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.6 has finished setting up [heg_Eventide_target.GetName]"
+	}
+}
+
+country_event = {
+	# Setup Sphinx, small military base
+	id = starsector_setup_hegemony.7
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		event_target:heg_Sphinx_target = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_city
+			add_building = building_colony_shelter
+			add_building = building_stronghold
+			add_building = building_energy_grid
+			while = {
+				count = 3
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.7 has finished setting up [heg_Sphinx_target.GetName]"
+	}
+}

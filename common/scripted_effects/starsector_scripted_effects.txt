@@ -1,4 +1,4 @@
-#Adds outpost to country with hegemony origin, called by starsector_setup.1 event only
+#Adds outpost to country with hegemony origin, called by starsector_setup_hegemony.1 event only
 starsector_create_outpost_effect = {
 	# Being called from within scope system
 	log = "STARSECTOR_LOG starsector_create_outpost_effect is adding an outpost in SYSTEM:\\[this.GetName]"
