@@ -35,26 +35,44 @@ country_event = {
 		}
 		clear_global_event_target = dummy_country_target
 		# Setup buildings and pops for various colonies
-		country_event = {
-			id = starsector_setup_hegemony.2
+		this = {
+			exists = capital_scope
+			country_event = {
+				id = starsector_setup_hegemony.2
+			}
 		}
-		country_event = {
-			id = starsector_setup_hegemony.3
+		this = {
+			exists = heg_Coatl_target
+			country_event = {
+				id = starsector_setup_hegemony.3
+			}
 		}
-		country_event = {
-			id = starsector_setup_hegemony.4
+		this = {
+			exists = heg_Yama_target
+			country_event = {
+				id = starsector_setup_hegemony.4
+			}
 		}
-		country_event = {
-			id = starsector_setup_hegemony.5
+		this = {
+			exists = heg_TigraCity_target
+			country_event = {
+				id = starsector_setup_hegemony.5
+			}
 		}
-		country_event = {
-			id = starsector_setup_hegemony.6
+		this = {
+			exists = heg_Eventide_target
+			country_event = {
+				id = starsector_setup_hegemony.6
+			}
 		}
-		country_event = {
-			id = starsector_setup_hegemony.7
+		this = {
+			exists = heg_Sphinx_target
+			country_event = {
+				id = starsector_setup_hegemony.7
+			}
 		}
 		set_country_flag = starsector_colonization_complete
-		log = "STARSECTOR_LOG: starsector_setup_hegemony.1 has finished"
+		log = "STARSECTOR_LOG: starsector_setup_hegemony.1 has finished setting up all COUTRY:[this.GetName] colonies"
 	}
 }
 
@@ -90,7 +108,6 @@ country_event = {
 							has_job_category = specialist
 							has_job_category = ruler
 						}
-						#has_planet_flag = heg_colony@prev
 					}
 					kill_pop = yes
 				}
