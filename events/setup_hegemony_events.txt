@@ -35,38 +35,50 @@ country_event = {
 		}
 		clear_global_event_target = dummy_country_target
 		# Setup buildings and pops for various colonies
-		this = {
-			exists = capital_scope
+		if = {
+			limit = {
+				exists = capital_scope
+			}
 			country_event = {
 				id = starsector_setup_hegemony.2
 			}
 		}
-		this = {
-			exists = heg_Coatl_target
+		if = {
+			limit = {
+				exists = event_target:heg_Coatl_target
+			}
 			country_event = {
 				id = starsector_setup_hegemony.3
 			}
 		}
-		this = {
-			exists = heg_Yama_target
+		if = {
+			limit = {
+				exists = event_target:heg_Yama_target
+			}
 			country_event = {
 				id = starsector_setup_hegemony.4
 			}
 		}
-		this = {
-			exists = heg_TigraCity_target
+		if = {
+			limit = {
+				exists = event_target:heg_TigraCity_target
+			}
 			country_event = {
 				id = starsector_setup_hegemony.5
 			}
 		}
-		this = {
-			exists = heg_Eventide_target
+		if = {
+			limit = {
+				exists = event_target:heg_Eventide_target
+			}
 			country_event = {
 				id = starsector_setup_hegemony.6
 			}
 		}
-		this = {
-			exists = heg_Sphinx_target
+		if = {
+			limit = {
+				exists = event_target:heg_Sphinx_target
+			}
 			country_event = {
 				id = starsector_setup_hegemony.7
 			}
