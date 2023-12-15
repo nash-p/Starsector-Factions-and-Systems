@@ -1,0 +1,15 @@
+####  A balance tech meant to multiply naval cap usage by 4 to make fleets smaller, and increase upkeep
+tech_starsector_naval_balance = {
+	cost = 0
+	area = society
+	start_tech = yes
+	tier = 0
+	category = {
+		military_theory
+	}
+	ai_update_type = all
+	modifier = {
+		mod_ship_naval_cap_usage_mult = 4
+		ships_upkeep_mult = 2
+	}
+}

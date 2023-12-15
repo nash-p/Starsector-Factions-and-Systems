@@ -1,0 +1,13 @@
+NGameplay = {
+	COMMAND_LIMIT_MAX = 200	# Max value of Command Limit
+	NAVAL_CAPACITY_MAX = 2500	# Max value of Naval Capacity
+	NAVAL_CAPACITY_BASE = 40	# Base value of Naval Capacity
+	NAVAL_CAPACITY_BASE_GALACTIC_COMMUNITY = 800	# Base value of Naval Capacity for the Galactic Defense Force/Imperial Armada
+}
+
+Nship = {
+	OUT_OF_COMBAT_SHIELD_REGEN_MULT = 20	# Shields recharge this much faster outside combat
+	OUT_OF_COMBAT_ARMOR_REGEN_MULT = 2	# Armor recharge this much faster outside combat
+	OUT_OF_COMBAT_HULL_REGEN_MULT = 4	# Hull recharge this much faster outside combat
+	SHIELD_RECHARGE_TICKS = 5	# Combat ticks before a shield that is fully depleted will start to recharge
+}
