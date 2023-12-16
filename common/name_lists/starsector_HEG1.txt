@@ -1045,7 +1045,7 @@ HEGEMON1 = {
 	### CHARACTERS
 	character_names = {
 		names1 = {
-			weight = 40
+			weight = 50
 			first_names_male = {
 				HUMAN2_CHR_John
 				HUMAN2_CHR_Brian
@@ -2100,16 +2100,17 @@ HEGEMON1 = {
 				HUMAN2_CHR_Henrietta
 			}
 			regnal_second_names = {
-				HUMAN2_CHR_Habsburg
-				HUMAN2_CHR_Romanov
-				HUMAN2_CHR_Windsor
-				HUMAN2_CHR_Mountbatten
-				HUMAN2_CHR_Salazar
-				HUMAN2_CHR_Nelson
+				HEG1_REGNAL_NAME_Daud
+				HEG1_REGNAL_NAME_Sang
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
 			}
 		}
 		names2 = {
-			weight = 20
+			weight = 30
 			first_names_male = {
 				HUMAN2_CHR_Ivan
 				HUMAN2_CHR_Nikolai
@@ -2293,16 +2294,17 @@ HEGEMON1 = {
 				HUMAN2_CHR_Henrietta
 			}
 			regnal_second_names = {
-				HUMAN2_CHR_Habsburg
-				HUMAN2_CHR_Romanov
-				HUMAN2_CHR_Windsor
-				HUMAN2_CHR_Mountbatten
-				HUMAN2_CHR_Salazar
-				HUMAN2_CHR_Nelson
+				HEG1_REGNAL_NAME_Daud
+				HEG1_REGNAL_NAME_Sang
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
 			}
 		}
 		names3 = {
-			weight = 40
+			weight = 30
 			first_names_male = {
 				HUMAN2_CHR_An
 				HUMAN2_CHR_Bao
@@ -2617,12 +2619,13 @@ HEGEMON1 = {
 				HUMAN2_CHR_Henrietta
 			}
 			regnal_second_names = {
-				HUMAN2_CHR_Habsburg
-				HUMAN2_CHR_Romanov
-				HUMAN2_CHR_Windsor
-				HUMAN2_CHR_Mountbatten
-				HUMAN2_CHR_Salazar
-				HUMAN2_CHR_Nelson
+				HEG1_REGNAL_NAME_Daud
+				HEG1_REGNAL_NAME_Sang
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
 			}
 		}
 		names5 = {
@@ -2769,12 +2772,13 @@ HEGEMON1 = {
 				HUMAN2_CHR_Henrietta
 			}
 			regnal_second_names = {
-				HUMAN2_CHR_Habsburg
-				HUMAN2_CHR_Romanov
-				HUMAN2_CHR_Windsor
-				HUMAN2_CHR_Mountbatten
-				HUMAN2_CHR_Salazar
-				HUMAN2_CHR_Nelson
+				HEG1_REGNAL_NAME_Daud
+				HEG1_REGNAL_NAME_Sang
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Cardona
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
+				HEG1_REGNAL_NAME_Rao
 			}
 		}
 		names6 = {
@@ -3060,7 +3064,7 @@ HEGEMON1 = {
 			}
 		}
 		names8 = {
-			weight = 25
+			weight = 15
 			first_names_male = {
 				HUMAN2_CHR_Diego
 				HUMAN2_CHR_Luis
