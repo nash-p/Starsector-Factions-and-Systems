@@ -776,7 +776,7 @@ HEGEMON1 = {
 			sequential_name = HEG1_ARMY_ORD_Heavy_Mech_Regiment
 		}
 		assault_army = {
-			randome_names = {
+			random_names = {
 				HEG1_ARMY_197th_HCR
 				HEG1_ARMY_198th_HCR
 				HEG1_ARMY_199th_HCR
