@@ -9,7 +9,7 @@ tech_starsector_naval_balance = {
 	}
 	ai_update_type = all
 	modifier = {
-		mod_ship_naval_cap_usage_mult = 4
+		#mod_ship_naval_cap_usage_mult = 4
 		ships_upkeep_mult = 2
 	}
 }
