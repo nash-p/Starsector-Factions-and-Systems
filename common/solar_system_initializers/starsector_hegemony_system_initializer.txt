@@ -42,7 +42,7 @@ heg_aztlan_system_initializer = {
 		orbit_angle = 15
 		has_ring = no
 		init_effect = {
-			set_name = "Xolotl"
+			set_name = HEG1_PLANET_Xolotl
 			prevent_anomaly = yes
 			clear_deposits = yes
 			set_deposit = d_minerals_5
@@ -67,7 +67,7 @@ heg_aztlan_system_initializer = {
 		has_ring = no
 		home_planet = yes
 		init_effect = {
-			set_name = "Chicomoztoc"
+			set_name = HEG1_PLANET_Chicomoztoc
 			prevent_anomaly = yes
 			add_modifier = {
 				modifier = "bleak_planet"
@@ -91,7 +91,7 @@ heg_aztlan_system_initializer = {
 		orbit_angle = 120
 		has_ring = no
 		init_effect = {
-			set_name = "Tlalocan"
+			set_name = HEG1_PLANET_Tlalocan
 			clear_deposits = yes
 			set_deposit = d_exotic_gases_1
 			set_planet_entity = {
@@ -113,7 +113,7 @@ heg_aztlan_system_initializer = {
 			orbit_angle = 40
 			has_ring = no
 			init_effect = {
-				set_name = "Coatl"
+				set_name = HEG1_PLANET_Coatl
 				prevent_anomaly = yes
 				add_modifier = {
 					modifier = "irradiated_planet"
@@ -130,7 +130,7 @@ heg_aztlan_system_initializer = {
 			orbit_angle = 115
 			has_ring = no
 			init_effect = {
-				set_name = "Zorrah"
+				set_name = HEG1_PLANET_Zorrah
 				prevent_anomaly = yes
 			}
 		}
@@ -225,7 +225,7 @@ aztlan_neighbor_t1 = {
 		orbit_angle = 60
 		has_ring = yes
 		init_effect = {
-			set_name = "Yama"
+			set_name = HEG1_PLANET_Yama
 			prevent_anomaly = yes
 			add_modifier = {
 				modifier = "bleak_planet"
@@ -242,7 +242,7 @@ aztlan_neighbor_t1 = {
 			orbit_angle = 60
 			has_ring = no
 			init_effect = {
-				set_name = "Yami"
+				set_name = HEG1_PLANET_Yami
 				add_modifier = {
 					modifier = "bleak_planet"
 					days = -1
@@ -257,7 +257,7 @@ aztlan_neighbor_t1 = {
 			size = 10
 			has_ring = no
 			init_effect = {
-				set_name = "Nachiketa"
+				set_name = HEG1_PLANET_Natchiteka
 				clear_deposits = yes
 				set_deposit = d_energy_6
 				#set_planet_flag = starsector_heg_colony
@@ -272,7 +272,7 @@ aztlan_neighbor_t1 = {
 		size = 10
 		has_ring = no
 		init_effect = {
-			set_name = "Chitagupta"
+			set_name = HEG1_PLANET_Chitagupta
 			clear_deposits = yes
 			set_deposit = d_minerals_3
 		}
@@ -308,7 +308,7 @@ aztlan_neighbor_t1 = {
 
 ### Samarra Star System
 aztlan_neighbor_t1_first_colony = {
-	name = "Samarra"
+	name = HEG1_PLANET_Samarra
 	class = sc_k
 	init_effect = {
 		save_global_event_target_as = starsector_heg_samarra
@@ -318,7 +318,7 @@ aztlan_neighbor_t1_first_colony = {
 		}
 	}
 	planet = {
-		name = "Samarra"
+		name = HEG1_PLANET_Samarra
 		count = 1
 		class = pc_k_star
 		orbit_distance = 0
@@ -349,7 +349,7 @@ aztlan_neighbor_t1_first_colony = {
 	}
 	planet = {
 		class = "pc_asteroid"
-		name = "Tigra"
+		name = HEG1_PLANET_Tigra
 		size = 3
 		orbit_distance = 0
 	}
@@ -360,7 +360,7 @@ aztlan_neighbor_t1_first_colony = {
 		size = 10
 		has_ring = no
 		init_effect = {
-			set_name = "Eridu"
+			set_name = HEG1_PLANET_Eridu
 		}
 		change_orbit = @base_moon_distance
 		moon = {
@@ -388,7 +388,7 @@ aztlan_neighbor_t1_first_colony = {
 		orbit_angle = 60
 		has_ring = no
 		init_effect = {
-			set_name = "Eventide"
+			set_name = HEG1_PLANET_Eventide
 			prevent_anomaly = yes
 			add_modifier = {
 				modifier = "tidal_locked"
@@ -405,7 +405,7 @@ aztlan_neighbor_t1_first_colony = {
 			orbit_angle = 90
 			has_ring = no
 			init_effect = {
-				set_name = "Lumen"
+				set_name = HEG1_PLANET_Lumen
 			}
 		}
 	}
@@ -417,7 +417,7 @@ aztlan_neighbor_t1_first_colony = {
 		orbit_angle = 330
 		has_ring = no
 		init_effect = {
-			set_name = "Typhon"
+			set_name = HEG1_PLANET_Typhon
 			add_modifier = {
 				modifier = extensive_moon_system
 				days = -1
@@ -431,7 +431,7 @@ aztlan_neighbor_t1_first_colony = {
 			orbit_angle = 75
 			has_ring = no
 			init_effect = {
-				set_name = "Chimera"
+				set_name = HEG1_PLANET_Chimera
 			}
 		}
 		change_orbit = @base_moon_distance
@@ -442,7 +442,7 @@ aztlan_neighbor_t1_first_colony = {
 			orbit_angle = -120
 			has_ring = no
 			init_effect = {
-				set_name = "Ladon"
+				set_name = HEG1_PLANET_Ladon
 			}
 		}
 		change_orbit = @base_moon_distance
@@ -454,7 +454,7 @@ aztlan_neighbor_t1_first_colony = {
 			orbit_angle = 0
 			has_ring = no
 			init_effect = {
-				set_name = "Orthus"
+				set_name = HEG1_PLANET_Orthus
 				prevent_anomaly = yes
 				set_deposit = d_exotic_gases_2
 				#set_planet_flag = starsector_heg_colony
@@ -469,7 +469,7 @@ aztlan_neighbor_t1_first_colony = {
 			orbit_angle = -225
 			has_ring = no
 			init_effect = {
-				set_name = "Sphinx"
+				set_name = HEG1_PLANET_Sphinx
 				prevent_anomaly = yes
 				set_deposit = d_energy_5
 				set_planet_flag = starsector_heg_colony
@@ -481,7 +481,7 @@ aztlan_neighbor_t1_first_colony = {
 
 ### Tia Star System
 aztlan_neighbor_t1_no_guaranteed_colony = {
-	name = "Tia"
+	name = HEG1_PLANET_Tia
 	class = sc_k
 	init_effect = {
 		save_global_event_target_as = starsector_heg_tia
@@ -500,7 +500,7 @@ aztlan_neighbor_t1_no_guaranteed_colony = {
 		size = 30
 		has_ring = no
 		init_effect = {
-			set_name = "Tia"
+			set_name = HEG1_PLANET_Tia
 		}
 	}
 	planet = {
@@ -510,7 +510,7 @@ aztlan_neighbor_t1_no_guaranteed_colony = {
 		size = 20
 		has_ring = no
 		init_effect = {
-			set_name = "Ta'xet"
+			set_name = HEG1_PLANET_Taxet
 			add_deposit = d_physics_5
 		}
 	}
@@ -547,7 +547,7 @@ aztlan_neighbor_t1_no_guaranteed_colony = {
 		orbit_angle = -90
 		has_ring = yes
 		init_effect = {
-			set_name = "Ogre"
+			set_name = HEG1_PLANET_Ogre
 			add_deposit = d_minerals_2
 			add_modifier = {
 				modifier = irradiated_planet
