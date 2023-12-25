@@ -1,4 +1,4 @@
-### The Hegemony
+﻿### The Hegemony
 ### Created by nash-p
 HEGEMON1 = {
 	category = "Humanoid"
