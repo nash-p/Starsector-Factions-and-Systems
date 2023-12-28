@@ -6,8 +6,8 @@ NGameplay = {
 }
 
 Nship = {
-	OUT_OF_COMBAT_SHIELD_REGEN_MULT = 20	# Shields recharge this much faster outside combat
+	OUT_OF_COMBAT_SHIELD_REGEN_MULT = 500	# Shields recharge this much faster outside combat
 	OUT_OF_COMBAT_ARMOR_REGEN_MULT = 2	# Armor recharge this much faster outside combat
 	OUT_OF_COMBAT_HULL_REGEN_MULT = 1	# Hull recharge this much faster outside combat
-	SHIELD_RECHARGE_TICKS = 5	# Combat ticks before a shield that is fully depleted will start to recharge
+	SHIELD_RECHARGE_TICKS = 1	# Combat ticks before a shield that is fully depleted will start to recharge
 }
