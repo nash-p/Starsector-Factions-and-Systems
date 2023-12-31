@@ -40,7 +40,7 @@ corvette = {
 	max_hitpoints = @corvette_hp
 	modifier = {
 		ship_evasion_add = @corvette_evasion
-		ship_piracy_suppression_add = 40
+		ship_piracy_suppression_add = 200
 	}
 	size_multiplier = 4
 	fleet_slot_size = 1
@@ -137,7 +137,7 @@ frigate = {
 	max_hitpoints = @frigate_hp
 	modifier = {
 		ship_evasion_add = @frigate_evasion
-		ship_piracy_suppression_add = 40
+		ship_piracy_suppression_add = 200
 	}
 	size_multiplier = 4
 	hull_scale = 1.25
@@ -222,7 +222,7 @@ destroyer = {
 	max_hitpoints = @destroyer_hp
 	modifier = {
 		ship_evasion_add = @destroyer_evasion
-		ship_piracy_suppression_add = 32
+		ship_piracy_suppression_add = 160
 	}
 	size_multiplier = 8
 	fleet_slot_size = 2
@@ -317,7 +317,7 @@ cruiser = {
 	max_hitpoints = @cruiser_hp
 	modifier = {
 		ship_evasion_add = @cruiser_evasion
-		ship_piracy_suppression_add = 18
+		ship_piracy_suppression_add = 90
 	}
 	size_multiplier = 16
 	fleet_slot_size = 3
@@ -432,7 +432,7 @@ battleship = {
 	max_hitpoints = @battleship_hp
 	modifier = {
 		ship_evasion_add = @battleship_evasion
-		ship_piracy_suppression_add = 12
+		ship_piracy_suppression_add = 60
 	}
 	size_multiplier = 32
 	fleet_slot_size = 4
@@ -1036,7 +1036,7 @@ military_station_small = {
 	modifier = {
 		ship_evasion_mult = -1
 		ships_upkeep_mult = -0.25
-		ship_piracy_suppression_add = 2
+		ship_piracy_suppression_add = 10
 	}
 	ship_modifier = {
 		ship_weapon_range_mult = 0.3
